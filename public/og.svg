@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070509"/>
+      <stop offset="0.55" stop-color="#1b1018"/>
+      <stop offset="1" stop-color="#070509"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#eab7a2" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#eab7a2" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.35"/></feComponentTransfer>
+    </filter>
+    <filter id="blur"><feGaussianBlur stdDeviation="40"/></filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <ellipse cx="820" cy="300" rx="330" ry="260" fill="url(#glow)" filter="url(#blur)"/>
+  <circle cx="840" cy="290" r="150" fill="none" stroke="#f6ede3" stroke-opacity="0.16"/>
+  <circle cx="840" cy="290" r="196" fill="none" stroke="#f6ede3" stroke-opacity="0.07"/>
+  <text x="96" y="262" fill="#f6ede3" font-family="Georgia, serif" font-size="96" letter-spacing="-3">A year</text>
+  <text x="96" y="352" fill="#eab7a2" font-family="Georgia, serif" font-style="italic" font-size="96">of you.</text>
+  <text x="100" y="424" fill="#a99aa6" font-family="Helvetica, Arial, sans-serif" font-size="18" letter-spacing="6">A PRIVATE SCREENING · ONE GUEST OF HONOUR</text>
+  <rect width="1200" height="630" filter="url(#noise)" opacity="0.25"/>
+</svg>
