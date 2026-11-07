@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Maximize2, X } from 'lucide-react'
 import { config } from '../lib/theme'
 import { registerGsap } from '../lib/anim'
 import type { GalleryItem } from '../config/types'
+import { AccentTitle } from './AccentTitle'
 import { Reveal } from './Reveal'
 
 export function Memories() {
@@ -112,9 +113,12 @@ export function Memories() {
         <div className="section-head">
           <p className="eyebrow">{config.memories.eyebrow}</p>
           <div className="section-head__row">
-            <h2 id="memories-title" className="section-title display">
-              Frames worth <em>keeping</em>
-            </h2>
+            <AccentTitle
+              id="memories-title"
+              className="section-title display"
+              text={config.memories.title}
+              accentWords={['keeping']}
+            />
             <p className="body-copy memories__intro">{config.memories.intro}</p>
           </div>
           <hr className="rule" />

@@ -27,16 +27,16 @@ SIZES = {
 }
 
 SCHEMES = [
-    ("#0b0910", "#241626", "#e6c4a2", "#c98f7a", "#f3e3cf"),
-    ("#080c12", "#132430", "#d9c7ae", "#8ea7a3", "#ece2d2"),
-    ("#0d0a0c", "#2a1a1c", "#e8c3a6", "#b9766d", "#f6e7d5"),
-    ("#090a0e", "#1c1a2b", "#d8c6b2", "#9a8fa8", "#efe6d8"),
-    ("#0a0b09", "#1b241d", "#dfcbb0", "#9aa894", "#f0e7d6"),
-    ("#0c090f", "#2a1c2b", "#edcdb0", "#c78f9d", "#f8ecdd"),
-    ("#080a10", "#17202e", "#d6c5b4", "#b99a7a", "#ece0d0"),
-    ("#0b0908", "#271c15", "#e9cba8", "#bd8d6d", "#f5e6d3"),
-    ("#090b10", "#1a2233", "#d5c8ba", "#8f9bb3", "#ece3d7"),
-    ("#0a090d", "#221a26", "#e7c9ae", "#b58b90", "#f4e5d6"),
+    ("#fff8f2", "#f7e4de", "#e7b6b1", "#d99591", "#fffdf9"),
+    ("#fffaf4", "#eef0e6", "#c3d0be", "#8fa68e", "#fffdf9"),
+    ("#fff7f0", "#f6e7df", "#eac9a8", "#d8ae68", "#fffdf9"),
+    ("#fdf7f2", "#efe4ea", "#c9aebf", "#997a93", "#fffdf9"),
+    ("#fff9f1", "#f4ebdd", "#dcc7a6", "#c9a878", "#fffdf9"),
+    ("#fff8f2", "#f8e5e3", "#e9bcba", "#d99591", "#fffdf9"),
+    ("#fbf8f2", "#eef0e4", "#c8d3c2", "#93a98f", "#fffdf9"),
+    ("#fff9f3", "#f4e6dc", "#e3c2b0", "#c9987f", "#fffdf9"),
+    ("#f9f8f4", "#e8edf0", "#bfcdd4", "#8fa6ae", "#fffdf9"),
+    ("#fdf7f4", "#f2e4e8", "#d9b6c0", "#b98d9d", "#fffdf9"),
 ]
 
 
@@ -138,9 +138,9 @@ def composition(key: str, w: int, h: int, scheme: tuple[str, ...]) -> str:
   {ribbon(rng, w, h, warm, idx)}
   {arch(w, h, cream, 0.22)}
   {stars(rng, w, h, cream, 110)}
-  <rect width="{w}" height="{h}" fill="url(#veil{uid})"/>
-  <rect width="{w}" height="{h}" filter="url(#grain{idx})" opacity="0.22" style="mix-blend-mode:overlay"/>
-  <rect x="14" y="14" width="{w - 28}" height="{h - 28}" fill="none" stroke="{cream}" stroke-opacity="0.12"/>
+  <rect width="{w}" height="{h}" fill="url(#veil{uid})" opacity="0.55"/>
+  <rect width="{w}" height="{h}" filter="url(#grain{idx})" opacity="0.22" style="mix-blend-mode:multiply"/>
+  <rect x="14" y="14" width="{w - 28}" height="{h - 28}" fill="none" stroke="{ink}" stroke-opacity="0.22"/>
 </svg>
 """
 

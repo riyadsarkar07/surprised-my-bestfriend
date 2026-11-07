@@ -7,6 +7,19 @@ export const preset: RelationshipPreset = relationshipPresets[config.recipient.r
 
 export const palette: Palette = { ...preset.palette, ...config.theme.palette }
 
+function hexToRgbTriplet(hex: string): string {
+  const clean = hex.replace('#', '')
+  const full =
+    clean.length === 3
+      ? clean
+          .split('')
+          .map((c) => c + c)
+          .join('')
+      : clean
+  const n = Number.parseInt(full, 16)
+  return `${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}`
+}
+
 export function cssVarsFromPalette(p: Palette): Record<string, string> {
   return {
     '--ink': p.ink,
@@ -18,6 +31,11 @@ export function cssVarsFromPalette(p: Palette): Record<string, string> {
     '--secondary': p.secondary,
     '--glow': p.glow,
     '--line': p.line,
+    '--accent-rgb': hexToRgbTriplet(p.accent),
+    '--secondary-rgb': hexToRgbTriplet(p.secondary),
+    '--glow-rgb': hexToRgbTriplet(p.glow),
+    '--ink-rgb': hexToRgbTriplet(p.ink),
+    '--text-rgb': hexToRgbTriplet(p.text),
   }
 }
 

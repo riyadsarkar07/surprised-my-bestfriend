@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { config, withName } from '../lib/theme'
+import { AccentTitle } from './AccentTitle'
 import { Reveal } from './Reveal'
 import { useConfetti } from '../hooks/useConfetti'
 
@@ -89,9 +90,7 @@ export function Cake({ onCelebrate }: CakeProps) {
       <div className="section__inner cake__inner">
         <div className="cake__copy">
           <p className="eyebrow">{config.cake.eyebrow}</p>
-          <h2 id="cake-title" className="section-title display">
-            Make a <em>wish</em>
-          </h2>
+          <AccentTitle id="cake-title" className="section-title display" text={config.cake.title} />
           <p className="body-copy cake__intro">{config.cake.intro}</p>
 
           <div className="cake__wish">

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ArrowLeft, ArrowRight, Shuffle } from 'lucide-react'
 import { config } from '../lib/theme'
+import { AccentTitle } from './AccentTitle'
 import { Reveal } from './Reveal'
 import { Magnetic } from './Magnetic'
 
@@ -76,9 +77,12 @@ export function Reasons() {
         <div className="section-head">
           <p className="eyebrow">{config.reasons.eyebrow}</p>
           <div className="section-head__row">
-            <h2 id="reasons-title" className="section-title display">
-              A deck of <em>reasons</em>
-            </h2>
+            <AccentTitle
+              id="reasons-title"
+              className="section-title display"
+              text={config.reasons.title}
+              accentWords={['reasons']}
+            />
             <p className="body-copy reasons__intro">{config.reasons.intro}</p>
           </div>
         </div>

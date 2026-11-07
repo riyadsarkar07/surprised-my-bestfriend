@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import Lenis from 'lenis'
-import { applyThemeToDocument, config, palette, preset } from './lib/theme'
+import { applyThemeToDocument, config, preset } from './lib/theme'
 import { registerGsap } from './lib/anim'
 import { setLenis } from './lib/scroll'
 import { useAudioEngine } from './hooks/useAudioEngine'
-import { Intro } from './components/Intro'
-import { ShaderBackdrop } from './components/ShaderBackdrop'
+import { Bloom } from './components/Bloom'
+import { Atmosphere } from './components/Atmosphere'
 import { Chrome } from './components/Chrome'
 import { Cursor } from './components/Cursor'
 import { Hero } from './components/Hero'
@@ -96,6 +96,8 @@ export default function App() {
       }
 
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        curtain.style.display = 'none'
+        app.style.opacity = '1'
         finish()
         return
       }
@@ -108,8 +110,8 @@ export default function App() {
       gsap.set(app, { opacity: 0 })
 
       const tl = gsap.timeline({ onComplete: finish })
-      tl.to(monogram, { opacity: 1, scale: 1, duration: 0.7, ease: 'power2.out' })
-        .to(monogram, { opacity: 0, duration: 0.45, ease: 'power2.in' }, '+=0.42')
+      tl.to(monogram, { opacity: 1, scale: 1, duration: 0.6, ease: 'power2.out' })
+        .to(monogram, { opacity: 0, duration: 0.4, ease: 'power2.in' }, '+=0.3')
         .to(panels, { yPercent: -101, duration: 1.5, ease: 'expo.inOut', stagger: 0.08 }, '-=0.1')
         .to(app, { opacity: 1, duration: 1.1, ease: 'power2.out' }, '-=0.95')
         .set(curtain, { display: 'none' })
@@ -129,8 +131,8 @@ export default function App() {
     <>
       <a className="skip-link" href="#hero">Skip to content</a>
 
-      <div className="app-shell" ref={appRef} data-phase={phase}>
-        <ShaderBackdrop palette={palette} intensity={preset.atmosphereIntensity} targetRef={appRef} />
+      <div className="app-shell" ref={appRef} data-phase={phase} data-relationship={preset.id}>
+        <Atmosphere />
         <div className="grain" aria-hidden="true" />
         <div className="vignette" aria-hidden="true" />
 
@@ -170,7 +172,7 @@ export default function App() {
         </div>
       </div>
 
-      {phase === 'intro' ? <Intro onEnter={handleEnter} audioEnabled={config.music.enabled} /> : null}
+      {phase === 'intro' ? <Bloom onEnter={handleEnter} audioEnabled={config.music.enabled} /> : null}
     </>
   )
 }

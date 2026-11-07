@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from 'react'
 import { config, withName } from '../lib/theme'
 import { scrollToId } from '../lib/scroll'
 import { Magnetic } from './Magnetic'
+import { Botanical } from './Atmosphere'
 import { splitHeadline } from '../lib/text'
 
 export function Hero() {
   const rootRef = useRef<HTMLElement>(null)
-  const nameRef = useRef<HTMLParagraphElement>(null)
   const [tilt, setTilt] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
@@ -36,23 +36,23 @@ export function Hero() {
 
   return (
     <section id="hero" ref={rootRef} className="hero" aria-labelledby="hero-title">
-      <div
-        className="hero__orbit"
-        style={{ transform: `translate3d(${tilt.x * -22}px, ${tilt.y * -18}px, 0)` }}
-        aria-hidden="true"
-      >
-        <div className="hero__ring hero__ring--one" />
-        <div className="hero__ring hero__ring--two" />
-        <div className="hero__ring hero__ring--three" />
-        <div className="hero__flare" />
-      </div>
+      <div className="hero__wash" aria-hidden="true" />
+
+      <Botanical
+        className="hero__ornament"
+        flip={false}
+      />
+      <Botanical className="hero__ornament hero__ornament--left" flip />
 
       <div className="hero__frame" aria-hidden="true">
         <span className="hero__frame-label">EST. {config.recipient.birthday.slice(0, 4)}</span>
-        <span className="hero__frame-label">NO. 001 / LIMITED EDITION</span>
+        <span className="hero__frame-label">A keepsake, not a template</span>
       </div>
 
-      <div className="hero__inner">
+      <div
+        className="hero__inner"
+        style={{ transform: `translate3d(${tilt.x * -8}px, ${tilt.y * -6}px, 0)` }}
+      >
         <p className="hero__kicker">
           <span className="hero__kicker-dot" aria-hidden="true" />
           {config.hero.eyebrow}
@@ -90,7 +90,7 @@ export function Hero() {
               <span className="hero__card-label">Guest of honour</span>
               <span className="hero__card-index">01</span>
             </div>
-            <p className="hero__card-name script" ref={nameRef}>
+            <p className="hero__card-name script">
               {config.recipient.name}
             </p>
             <div className="hero__card-meta">

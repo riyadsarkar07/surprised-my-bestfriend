@@ -1,27 +1,62 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#070509"/>
-      <stop offset="0.55" stop-color="#1b1018"/>
-      <stop offset="1" stop-color="#070509"/>
+      <stop offset="0" stop-color="#fff8f2"/>
+      <stop offset="0.55" stop-color="#fbece7"/>
+      <stop offset="1" stop-color="#f7e4de"/>
     </linearGradient>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#eab7a2" stop-opacity="0.55"/>
-      <stop offset="1" stop-color="#eab7a2" stop-opacity="0"/>
+      <stop offset="0" stop-color="#d8ae68" stop-opacity="0.4"/>
+      <stop offset="0.5" stop-color="#d99591" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#d99591" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="petal" cx="42%" cy="80%" r="82%">
+      <stop offset="0" stop-color="#fdf1ec"/>
+      <stop offset="0.5" stop-color="#f2d4cf"/>
+      <stop offset="1" stop-color="#d99591"/>
+    </radialGradient>
+    <radialGradient id="petal-inner" cx="42%" cy="80%" r="80%">
+      <stop offset="0" stop-color="#fff6f0"/>
+      <stop offset="1" stop-color="#eab9b5"/>
+    </radialGradient>
+    <radialGradient id="core" cx="40%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#f7e2b8"/>
+      <stop offset="0.6" stop-color="#e2bd7c"/>
+      <stop offset="1" stop-color="#b98a4e"/>
     </radialGradient>
     <filter id="noise">
       <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3"/>
       <feColorMatrix type="saturate" values="0"/>
       <feComponentTransfer><feFuncA type="linear" slope="0.35"/></feComponentTransfer>
     </filter>
-    <filter id="blur"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="blur"><feGaussianBlur stdDeviation="46"/></filter>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <ellipse cx="820" cy="300" rx="330" ry="260" fill="url(#glow)" filter="url(#blur)"/>
-  <circle cx="840" cy="290" r="150" fill="none" stroke="#f6ede3" stroke-opacity="0.16"/>
-  <circle cx="840" cy="290" r="196" fill="none" stroke="#f6ede3" stroke-opacity="0.07"/>
-  <text x="96" y="262" fill="#f6ede3" font-family="Georgia, serif" font-size="96" letter-spacing="-3">A year</text>
-  <text x="96" y="352" fill="#eab7a2" font-family="Georgia, serif" font-style="italic" font-size="96">of you.</text>
-  <text x="100" y="424" fill="#a99aa6" font-family="Helvetica, Arial, sans-serif" font-size="18" letter-spacing="6">A PRIVATE SCREENING · ONE GUEST OF HONOUR</text>
-  <rect width="1200" height="630" filter="url(#noise)" opacity="0.25"/>
+  <ellipse cx="860" cy="300" rx="330" ry="270" fill="url(#glow)" filter="url(#blur)"/>
+  <g transform="translate(860 300)">
+    <g opacity="0.95">
+      <ellipse rx="52" ry="132" transform="rotate(0)" fill="url(#petal)"/>
+      <ellipse rx="52" ry="132" transform="rotate(45)" fill="url(#petal)"/>
+      <ellipse rx="52" ry="132" transform="rotate(90)" fill="url(#petal)"/>
+      <ellipse rx="52" ry="132" transform="rotate(135)" fill="url(#petal)"/>
+      <ellipse rx="52" ry="132" transform="rotate(180)" fill="url(#petal)"/>
+      <ellipse rx="52" ry="132" transform="rotate(225)" fill="url(#petal)"/>
+      <ellipse rx="52" ry="132" transform="rotate(270)" fill="url(#petal)"/>
+      <ellipse rx="52" ry="132" transform="rotate(315)" fill="url(#petal)"/>
+    </g>
+    <g opacity="0.98">
+      <ellipse rx="40" ry="92" transform="rotate(24)" fill="url(#petal-inner)"/>
+      <ellipse rx="40" ry="92" transform="rotate(96)" fill="url(#petal-inner)"/>
+      <ellipse rx="40" ry="92" transform="rotate(168)" fill="url(#petal-inner)"/>
+      <ellipse rx="40" ry="92" transform="rotate(240)" fill="url(#petal-inner)"/>
+      <ellipse rx="40" ry="92" transform="rotate(312)" fill="url(#petal-inner)"/>
+    </g>
+    <circle r="38" fill="url(#core)"/>
+    <circle r="15" fill="#fff3d4" opacity="0.7"/>
+  </g>
+  <text x="96" y="278" fill="#72566f" font-family="Georgia, serif" font-size="96" letter-spacing="-3">A year</text>
+  <text x="96" y="368" fill="#d99591" font-family="Georgia, serif" font-style="italic" font-size="96">of you.</text>
+  <text x="100" y="440" fill="#796e7c" font-family="Helvetica, Arial, sans-serif" font-size="17" letter-spacing="6">A BIRTHDAY KEEPSAKE · MADE BY HAND</text>
+  <path d="M100 500 H 460" stroke="#d8ae68" stroke-width="1" opacity="0.6"/>
+  <rect width="1200" height="630" filter="url(#noise)" opacity="0.16" style="mix-blend-mode:multiply"/>
 </svg>

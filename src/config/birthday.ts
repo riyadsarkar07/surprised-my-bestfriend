@@ -4,7 +4,7 @@ import { relationshipPresets } from './presets'
 export const birthdayConfig: BirthdayConfig = {
   recipient: {
     name: 'Aria',
-    relationship: 'romantic',
+    relationship: 'bestFriend',
     birthday: '1998-08-14',
     age: 27,
     pronoun: 'her',

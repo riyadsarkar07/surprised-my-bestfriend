@@ -1,5 +1,18 @@
 import type { RelationshipPreset, RelationshipMode } from './types'
 
+/**
+ * Floral Atelier palette — warm ivory paper, muted plum ink, dusty pink,
+ * sage leaf and soft gold. Every preset shares the same paper base so the
+ * whole site reads as one stationery set; only the floral accents shift.
+ */
+const PAPER = {
+  ink: '#fff8f2',
+  inkSoft: '#f6eceb',
+  text: '#302d35',
+  muted: '#796e7c',
+  line: 'rgba(48, 45, 53, 0.13)',
+}
+
 export const relationshipPresets: Record<RelationshipMode, RelationshipPreset> = {
   romantic: {
     id: 'romantic',
@@ -8,18 +21,14 @@ export const relationshipPresets: Record<RelationshipMode, RelationshipPreset> =
     motion: 'silk',
     atmosphereIntensity: 1,
     palette: {
-      ink: '#070509',
-      inkSoft: '#110b14',
-      text: '#f6ede3',
-      muted: '#a99aa6',
-      accent: '#eab7a2',
-      accentSoft: '#f8ddcf',
-      secondary: '#b98aa6',
-      glow: '#ff9f88',
-      line: 'rgba(246, 237, 227, 0.14)',
+      ...PAPER,
+      accent: '#d99591',
+      accentSoft: '#f6dedb',
+      secondary: '#8fa68e',
+      glow: '#d8ae68',
     },
     microcopy: {
-      invitation: 'For the person who turned my life into a film.',
+      invitation: 'For the person who made ordinary days feel written by hand.',
       enterWithSound: 'Open with sound',
       enterQuietly: 'Enter quietly',
       celebrationKicker: 'The day the world got softer',
@@ -35,17 +44,13 @@ export const relationshipPresets: Record<RelationshipMode, RelationshipPreset> =
     label: 'Best Friend',
     shortLabel: 'For my best friend',
     motion: 'spark',
-    atmosphereIntensity: 1.15,
+    atmosphereIntensity: 1.05,
     palette: {
-      ink: '#05090a',
-      inkSoft: '#0b1314',
-      text: '#eef2e6',
-      muted: '#9aa9a5',
-      accent: '#d9d29a',
-      accentSoft: '#f0f1c9',
-      secondary: '#7fb2a5',
-      glow: '#b9d98a',
-      line: 'rgba(238, 242, 230, 0.14)',
+      ...PAPER,
+      accent: '#d99591',
+      accentSoft: '#f6dedb',
+      secondary: '#8fa68e',
+      glow: '#d8ae68',
     },
     microcopy: {
       invitation: 'For the person who makes every ordinary day worth remembering.',
@@ -64,17 +69,13 @@ export const relationshipPresets: Record<RelationshipMode, RelationshipPreset> =
     label: 'Close Friend',
     shortLabel: 'For a dear friend',
     motion: 'ember',
-    atmosphereIntensity: 0.85,
+    atmosphereIntensity: 0.9,
     palette: {
-      ink: '#06080f',
-      inkSoft: '#0b0f19',
-      text: '#edf0f7',
-      muted: '#9aa3b8',
-      accent: '#d9c3a5',
-      accentSoft: '#efe0c9',
-      secondary: '#8f9dc4',
-      glow: '#a9b8ff',
-      line: 'rgba(237, 240, 247, 0.14)',
+      ...PAPER,
+      accent: '#8fa68e',
+      accentSoft: '#e4ede2',
+      secondary: '#d99591',
+      glow: '#d8ae68',
     },
     microcopy: {
       invitation: 'For someone who makes the world a warmer place.',

@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { config } from '../lib/theme'
 import { registerGsap } from '../lib/anim'
+import { AccentTitle } from './AccentTitle'
 import { Reveal } from './Reveal'
 
 export function Story() {
@@ -63,9 +64,12 @@ export function Story() {
         <div className="story__head">
           <div>
             <p className="eyebrow">{config.story.eyebrow}</p>
-            <h2 id="story-title" className="section-title display story__title">
-              How we <em>got here</em>
-            </h2>
+            <AccentTitle
+              id="story-title"
+              className="section-title display story__title"
+              text={config.story.title}
+              accentWords={['here']}
+            />
           </div>
           <div className="story__head-side">
             <p className="body-copy">{config.story.intro}</p>

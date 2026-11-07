@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { config, withName } from '../lib/theme'
+import { AccentTitle } from './AccentTitle'
 import { Reveal } from './Reveal'
 
 export function Letter() {
@@ -68,9 +69,12 @@ export function Letter() {
       <div className="section__inner letter__inner">
         <div className="letter__aside">
           <p className="eyebrow">{config.letter.eyebrow}</p>
-          <h2 id="letter-title" className="section-title display letter__title">
-            A letter, <em>sealed</em> for you
-          </h2>
+          <AccentTitle
+            id="letter-title"
+            className="section-title display letter__title"
+            text={config.letter.title}
+            accentWords={['sealed']}
+          />
           <p className="body-copy letter__intro">{config.letter.intro}</p>
 
           <div className="letter__meta">
