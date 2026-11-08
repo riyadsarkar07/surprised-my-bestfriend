@@ -56,10 +56,10 @@
 }
 
 .hero__frame-label {
-  font-size: 0.55rem;
-  letter-spacing: 0.28em;
+  font-size: 0.6rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.34);
+  color: rgba(48, 45, 53, 0.6);
 }
 
 .hero__inner {
@@ -129,7 +129,7 @@
 
 .hero__word-inner em {
   font-family: var(--script);
-  color: var(--accent);
+  color: var(--accent-ink);
   font-size: 1.03em;
   letter-spacing: -0.01em;
   padding-right: 0.04em;
@@ -186,17 +186,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.54rem;
-  letter-spacing: 0.26em;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.46);
+  color: rgba(48, 45, 53, 0.66);
 }
 
 .hero__card-index {
   font-family: var(--serif);
   font-size: 0.88rem;
   letter-spacing: 0;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .hero__card-name {
@@ -224,10 +224,10 @@
 }
 
 .hero__card-note {
-  font-size: 0.64rem;
-  letter-spacing: 0.18em;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.4);
+  color: rgba(48, 45, 53, 0.62);
 }
 
 .hero__scroll {
@@ -241,10 +241,10 @@
 }
 
 .hero__scroll-text {
-  font-size: 0.54rem;
-  letter-spacing: 0.3em;
+  font-size: 0.6rem;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.38);
+  color: rgba(48, 45, 53, 0.6);
   writing-mode: vertical-rl;
 }
 
@@ -284,7 +284,7 @@
 
 @media (min-width: 1100px) {
   .hero__scroll {
-    display: flex;
+    display: none;
   }
   .hero__card {
     width: 360px;
@@ -361,7 +361,7 @@
 
 .celebration__date-value {
   font-size: clamp(1.35rem, 2.4vw, 1.8rem);
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 @media (min-width: 980px) {
@@ -424,9 +424,9 @@
 }
 
 .celebration__stat-index {
-  font-size: 0.5rem;
-  letter-spacing: 0.24em;
-  color: rgba(48, 45, 53, 0.32);
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  color: rgba(48, 45, 53, 0.55);
 }
 
 .celebration__stat-value {
@@ -475,7 +475,7 @@
   font-family: var(--serif);
   font-size: clamp(1.05rem, 2vw, 1.5rem);
   letter-spacing: 0.02em;
-  color: rgba(114, 86, 111, 0.62);
+  color: var(--muted);
   white-space: nowrap;
 }
 
@@ -614,9 +614,9 @@
 }
 
 .memory__no {
-  font-size: 0.53rem;
-  letter-spacing: 0.2em;
-  color: rgba(48, 45, 53, 0.32);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  color: rgba(48, 45, 53, 0.55);
 }
 
 .memories__footnote {
@@ -627,10 +627,10 @@
   margin-top: 2.4rem;
   padding-top: 1.2rem;
   border-top: 1px solid var(--line);
-  font-size: 0.58rem;
-  letter-spacing: 0.2em;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.42);
+  color: rgba(48, 45, 53, 0.66);
 }
 
 @media (min-width: 760px) {
@@ -811,7 +811,7 @@
 
 .lightbox__nav:hover {
   border-color: var(--accent);
-  color: var(--accent);
+  color: var(--accent-ink);
   background: rgba(var(--accent-rgb), 0.08);
 }
 
@@ -945,15 +945,15 @@
 
 .story__year {
   font-size: clamp(1.4rem, 2.4vw, 1.95rem);
-  color: var(--accent);
+  color: var(--accent-ink);
   line-height: 1;
 }
 
 .story__chapter {
-  font-size: 0.54rem;
-  letter-spacing: 0.26em;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.36);
+  color: rgba(48, 45, 53, 0.6);
 }
 
 .story__event-body {
@@ -967,7 +967,7 @@
   font-size: 0.52rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--secondary);
+  color: var(--sage-ink);
   border: 1px solid rgba(var(--secondary-rgb), 0.46);
   padding: 0.26rem 0.6rem;
   border-radius: 99px;
@@ -1196,15 +1196,15 @@
 .reason-card__no {
   font-family: var(--serif);
   font-size: 0.92rem;
-  color: var(--accent);
+  color: var(--accent-ink);
   letter-spacing: 0.04em;
 }
 
 .reason-card__tag {
-  font-size: 0.53rem;
-  letter-spacing: 0.24em;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.42);
+  color: rgba(48, 45, 53, 0.66);
 }
 
 .reason-card__title {
@@ -1233,10 +1233,10 @@
 }
 
 .reason-card__open {
-  font-size: 0.58rem;
-  letter-spacing: 0.2em;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-ink);
   border-bottom: 1px solid rgba(var(--accent-rgb), 0.45);
   padding-bottom: 0.3rem;
   transition: color 0.3s, border-color 0.3s;
@@ -1248,7 +1248,7 @@
 }
 
 .reason-card__sig {
-  color: rgba(48, 45, 53, 0.42);
+  color: rgba(48, 45, 53, 0.62);
   font-size: 0.98rem;
 }
 
@@ -1315,7 +1315,7 @@
   font-family: var(--script);
   font-style: italic;
   font-size: clamp(1.1rem, 2vw, 1.45rem);
-  color: rgba(114, 86, 111, 0.66);
+  color: var(--muted);
 }
 
 @media (min-width: 620px) {
@@ -1408,7 +1408,7 @@
 }
 
 .letter__meta-key {
-  color: rgba(48, 45, 53, 0.38);
+  color: rgba(48, 45, 53, 0.6);
   text-transform: uppercase;
   font-size: 0.56rem;
   letter-spacing: 0.2em;
@@ -1421,10 +1421,10 @@
 
 .letter__hint {
   margin-top: 1.6rem;
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.34);
+  color: rgba(48, 45, 53, 0.6);
   max-width: 32ch;
   line-height: 1.9;
 }
@@ -1665,7 +1665,7 @@
 }
 
 .letter__actions .link-arrow:hover {
-  color: var(--accent);
+  color: var(--accent-ink);
   border-color: var(--accent);
 }
 
@@ -1676,7 +1676,7 @@
 
 .letter__footer-quote {
   font-size: clamp(1.1rem, 2vw, 1.45rem);
-  color: rgba(114, 86, 111, 0.6);
+  color: var(--muted);
   max-width: 40ch;
   margin-inline: auto;
 }
@@ -1725,10 +1725,10 @@
 
 .cake__wish-label {
   display: block;
-  font-size: 0.55rem;
-  letter-spacing: 0.24em;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.44);
+  color: rgba(48, 45, 53, 0.66);
   margin-bottom: 0.6rem;
 }
 
@@ -1753,7 +1753,7 @@
 }
 
 .cake__wish-input::placeholder {
-  color: rgba(48, 45, 53, 0.32);
+  color: rgba(48, 45, 53, 0.5);
 }
 
 .cake__wish-input:focus {
@@ -1829,10 +1829,10 @@
 
 .cake__hint {
   margin-top: 1rem;
-  font-size: 0.56rem;
-  letter-spacing: 0.2em;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.34);
+  color: rgba(48, 45, 53, 0.6);
 }
 
 .cake__stage {
@@ -2068,7 +2068,7 @@
   translate: -50% 0;
   white-space: nowrap;
   font-size: clamp(0.92rem, 1.8vw, 1.15rem);
-  color: var(--accent);
+  color: var(--accent-ink);
   animation: wish-rise 1.4s var(--ease-silk) both;
 }
 
@@ -2084,10 +2084,10 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  font-size: 0.58rem;
-  letter-spacing: 0.2em;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.36);
+  color: rgba(48, 45, 53, 0.6);
 }
 
 .cake__footnote-mark {
@@ -2215,7 +2215,7 @@
 
 .finale__signature p {
   font-size: clamp(1.2rem, 2.4vw, 1.6rem);
-  color: var(--accent);
+  color: var(--accent-ink);
   white-space: nowrap;
 }
 
@@ -2237,10 +2237,10 @@
 }
 
 .finale__hint {
-  font-size: 0.56rem;
-  letter-spacing: 0.22em;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.34);
+  color: rgba(48, 45, 53, 0.6);
 }
 
 .footer {
@@ -2259,10 +2259,10 @@
   display: grid;
   gap: 0.5rem;
   text-align: center;
-  font-size: 0.54rem;
-  letter-spacing: 0.2em;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.36);
+  color: rgba(48, 45, 53, 0.6);
 }
 
 .footer__brand {
@@ -2288,8 +2288,8 @@
    ========================================================================== */
 .player {
   position: fixed;
-  right: clamp(0.8rem, 2vw, 1.6rem);
-  bottom: clamp(0.8rem, 2vw, 1.6rem);
+  right: calc(clamp(0.8rem, 2vw, 1.6rem) + env(safe-area-inset-right));
+  bottom: calc(clamp(0.8rem, 2vw, 1.6rem) + env(safe-area-inset-bottom));
   z-index: 58;
   width: auto;
   max-width: min(92vw, 360px);
@@ -2299,14 +2299,42 @@
   -webkit-backdrop-filter: blur(20px) saturate(140%);
   border-radius: var(--radius-pill);
   overflow: hidden;
-  transition: border-radius 0.5s var(--ease-silk), background 0.4s, width 0.5s var(--ease-silk);
+  transition: border-radius 0.5s var(--ease-silk), background 0.4s, width 0.5s var(--ease-silk),
+    transform 0.45s var(--ease-silk), opacity 0.35s;
   box-shadow: 0 18px 40px -24px rgba(74, 52, 66, 0.5);
+}
+
+.player.is-hidden {
+  transform: translateY(calc(100% + 1.2rem));
+  opacity: 0;
+  pointer-events: none;
 }
 
 .player.is-expanded {
   border-radius: 14px;
   background: rgba(255, 250, 245, 0.94);
   width: min(92vw, 360px);
+}
+
+.player:not(.is-expanded) {
+  width: 3rem;
+  border-radius: var(--radius-pill);
+}
+
+.player:not(.is-expanded) .player__toggle {
+  justify-content: center;
+  padding: 0.7rem;
+}
+
+.player:not(.is-expanded) .player__now {
+  display: none;
+}
+
+.player:not(.is-expanded) .player__panel {
+  width: 0;
+  max-height: 0;
+  opacity: 0;
+  padding-inline: 0;
 }
 
 .player__toggle {
@@ -2360,10 +2388,10 @@
 }
 
 .player__state {
-  font-size: 0.46rem;
-  letter-spacing: 0.24em;
+  font-size: 0.54rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.44);
+  color: rgba(48, 45, 53, 0.6);
 }
 
 .player__title {
@@ -2409,7 +2437,7 @@
 }
 
 .player__btn:hover {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .player__play {
@@ -2488,9 +2516,9 @@
 .player__time {
   display: flex;
   justify-content: space-between;
-  font-size: 0.5rem;
+  font-size: 0.56rem;
   letter-spacing: 0.12em;
-  color: rgba(48, 45, 53, 0.4);
+  color: rgba(48, 45, 53, 0.6);
   font-variant-numeric: tabular-nums;
 }
 
@@ -2509,7 +2537,7 @@
 }
 
 .player__volume button:hover {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .player__list-toggle {
@@ -2520,12 +2548,12 @@
   margin-top: 0.65rem;
   padding-top: 0.65rem;
   border-top: 1px solid rgba(114, 86, 111, 0.14);
-  color: rgba(48, 45, 53, 0.44);
+  color: rgba(48, 45, 53, 0.62);
   transition: color 0.3s;
 }
 
 .player__list-toggle:hover {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .player__list {
@@ -2554,9 +2582,9 @@
 }
 
 .player__list-index {
-  font-size: 0.53rem;
+  font-size: 0.58rem;
   letter-spacing: 0.12em;
-  color: rgba(48, 45, 53, 0.4);
+  color: rgba(48, 45, 53, 0.6);
 }
 
 .player__list-meta {
@@ -2571,9 +2599,9 @@
 }
 
 .player__list-meta small {
-  font-size: 0.53rem;
+  font-size: 0.58rem;
   letter-spacing: 0.1em;
-  color: rgba(48, 45, 53, 0.4);
+  color: rgba(48, 45, 53, 0.6);
 }
 
 @media (max-width: 640px) {

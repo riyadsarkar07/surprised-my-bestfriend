@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ListMusic, Volume1, Volume2, VolumeX } from 'lucide-react'
 import type { AudioEngine } from '../hooks/useAudioEngine'
 import { config } from '../lib/theme'
@@ -18,13 +18,41 @@ function formatTime(value: number): string {
 export function MusicPlayer({ audio, visible }: MusicPlayerProps) {
   const [expanded, setExpanded] = useState(false)
   const [listOpen, setListOpen] = useState(false)
+  const [hidden, setHidden] = useState(false)
+
+  useEffect(() => {
+    if (!visible) return
+    let frame = 0
+    let lastY = window.scrollY
+    const update = () => {
+      frame = 0
+      const y = window.scrollY
+      const delta = y - lastY
+      lastY = y
+      if (Math.abs(delta) < 6) return
+      setHidden(delta > 0 && y > 220)
+    }
+    const onScroll = () => {
+      if (frame) return
+      frame = requestAnimationFrame(update)
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      if (frame) cancelAnimationFrame(frame)
+    }
+  }, [visible])
+
+  useEffect(() => {
+    if (expanded) setHidden(false)
+  }, [expanded])
 
   if (!visible || !config.music.enabled || !config.music.tracks.length) return null
 
   const VolumeIcon = audio.muted || audio.volume === 0 ? VolumeX : audio.volume > 0.55 ? Volume2 : Volume1
 
   return (
-    <div className={`player${expanded ? ' is-expanded' : ''}`} aria-label="Soundtrack player">
+    <div className={`player${expanded ? ' is-expanded' : ''}${hidden && !expanded ? ' is-hidden' : ''}`} aria-label="Soundtrack player">
       <button
         type="button"
         className="player__toggle"

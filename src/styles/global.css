@@ -35,10 +35,12 @@
   --ink: #fff8f2;
   --ink-soft: #f1e5e8;
   --paper: #302d35;
-  --muted: #796e7c;
+  --muted: #635a66;
   --accent: #d99591;
+  --accent-ink: #9c5a57;
   --accent-soft: #f6dedb;
   --secondary: #8fa68e;
+  --sage-ink: #557153;
   --glow: #d8ae68;
   --line: rgba(48, 45, 53, 0.13);
 
@@ -109,6 +111,7 @@ body {
 body.is-locked {
   overflow: hidden;
   height: 100vh;
+  height: 100svh;
 }
 
 img,
@@ -191,7 +194,7 @@ ol {
 .display em {
   font-style: italic;
   font-weight: 400;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .script {
@@ -251,7 +254,7 @@ ol {
   font-size: 0.6rem;
   letter-spacing: 0.34em;
   text-transform: uppercase;
-  color: rgba(var(--text-rgb), 0.35);
+  color: rgba(var(--text-rgb), 0.62);
   writing-mode: vertical-rl;
 }
 
@@ -610,7 +613,7 @@ main {
   font-family: var(--serif);
   font-size: 0.92rem;
   letter-spacing: 0;
-  color: var(--accent);
+  color: var(--accent-ink);
   position: relative;
 }
 
@@ -737,7 +740,7 @@ main {
 
 .chapter-rail__item:hover,
 .chapter-rail__item.is-active {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .chapter-rail__item.is-active .chapter-rail__bar {
@@ -776,9 +779,11 @@ main {
   position: fixed;
   inset: 0;
   z-index: 100;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   background:
     radial-gradient(60% 50% at 50% 38%, rgba(var(--accent-rgb), 0.22), transparent 72%),
     radial-gradient(50% 40% at 82% 78%, rgba(var(--secondary-rgb), 0.16), transparent 70%),
@@ -818,32 +823,37 @@ main {
 
 .bloom__skip {
   position: absolute;
-  top: clamp(1.2rem, 3vw, 2rem);
-  right: clamp(1.2rem, 3vw, 2.2rem);
+  top: calc(clamp(1.1rem, 3vw, 2rem) + env(safe-area-inset-top));
+  right: calc(clamp(1.2rem, 3vw, 2.2rem) + env(safe-area-inset-right));
   z-index: 106;
-  font-size: 0.56rem;
+  font-size: 0.6rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.4);
+  color: rgba(48, 45, 53, 0.62);
   padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(114, 86, 111, 0.2);
+  border-bottom: 1px solid rgba(114, 86, 111, 0.28);
   transition: color 0.3s, border-color 0.3s;
 }
 
 .bloom__skip:hover {
   color: var(--plum);
-  border-color: var(--accent);
+  border-color: var(--accent-ink);
 }
 
 .bloom__stage {
   position: relative;
   z-index: 2;
   width: min(92vw, 760px);
-  display: grid;
-  justify-items: center;
+  min-height: 100%;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  gap: clamp(0.5rem, 1.6vw, 1rem);
-  padding: clamp(1rem, 4vw, 2rem);
+  gap: clamp(0.55rem, 1.4vh, 1.05rem);
+  padding: calc(clamp(3.5rem, 8vh, 5.5rem) + env(safe-area-inset-top)) clamp(1rem, 4vw, 2rem)
+    calc(clamp(1.25rem, 4vh, 2rem) + env(safe-area-inset-bottom));
 }
 
 .bloom__canvas {
@@ -857,11 +867,13 @@ main {
 
 .bloom__flower {
   position: relative;
-  width: clamp(200px, 30vw, 300px);
-  height: auto;
+  height: clamp(140px, 30vh, 320px);
+  width: auto;
+  max-width: min(68vw, 300px);
   overflow: visible;
   filter: drop-shadow(0 26px 40px rgba(114, 86, 111, 0.18));
   z-index: 2;
+  flex: 0 0 auto;
 }
 
 .bloom__halo {
@@ -950,29 +962,31 @@ main {
 }
 
 .bloom__eyebrow {
-  font-size: 0.6rem;
-  letter-spacing: 0.32em;
+  font-size: 0.63rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--muted);
 }
 
 .bloom__title {
   font-family: var(--serif);
-  font-size: clamp(2.4rem, 6.4vw, 4.4rem);
+  font-size: clamp(2.5rem, 6.2vw, 4.4rem);
+  font-weight: 500;
   line-height: 1.02;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.03em;
   color: var(--plum);
 }
 
 .bloom__title em {
   font-style: italic;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .bloom__line {
-  max-width: 44ch;
-  font-size: 0.93rem;
-  line-height: 1.75;
+  max-width: 42ch;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  line-height: 1.7;
   color: var(--muted);
   text-wrap: balance;
 }
@@ -994,10 +1008,10 @@ main {
 }
 
 .bloom__note {
-  font-size: 0.56rem;
-  letter-spacing: 0.22em;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.34);
+  color: rgba(48, 45, 53, 0.6);
   opacity: 0;
   transition: opacity 1s ease 2.3s;
 }
@@ -1119,6 +1133,35 @@ main {
 
 .cursor.is-hover .cursor__label {
   opacity: 1;
+}
+
+/* ==========================================================================
+   Short viewports — keep the whole welcome above the fold
+   ========================================================================== */
+@media (max-height: 720px) {
+  .bloom__stage {
+    gap: 0.5rem;
+    padding-top: calc(3rem + env(safe-area-inset-top));
+  }
+  .bloom__flower {
+    height: clamp(120px, 26vh, 210px);
+  }
+  .bloom__title {
+    font-size: clamp(2.1rem, 5.4vw, 3rem);
+  }
+  .bloom__line {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .bloom__actions {
+    margin-top: 0.35rem;
+  }
+}
+
+@media (max-height: 620px) {
+  .bloom__flower {
+    height: clamp(100px, 22vh, 160px);
+  }
 }
 
 /* ==========================================================================
