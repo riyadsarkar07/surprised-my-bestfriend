@@ -535,6 +535,17 @@
   will-change: transform;
 }
 
+.memory__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 253, 249, 0.42);
+  box-shadow: inset 0 0 0 6px rgba(255, 253, 249, 0.08), inset 0 0 24px rgba(74, 52, 66, 0.12);
+  pointer-events: none;
+  z-index: 2;
+}
+
 .memory--portrait .memory__media { aspect-ratio: 4 / 5; }
 .memory--landscape .memory__media { aspect-ratio: 16 / 10; }
 .memory--wide .memory__media { aspect-ratio: 16 / 9; }
@@ -603,20 +614,34 @@
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.7rem 0.15rem 0;
+  padding: 0.85rem 0.15rem 0;
 }
 
 .memory__caption {
   font-family: var(--serif);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   letter-spacing: 0.01em;
   color: var(--plum);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s var(--ease-silk), color 0.35s ease;
+}
+
+.memory:hover .memory__caption,
+.memory:focus-visible .memory__caption {
+  background-size: 100% 1px;
+  color: var(--accent-ink);
 }
 
 .memory__no {
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
-  color: rgba(48, 45, 53, 0.55);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--accent-ink);
+  opacity: 0.72;
 }
 
 .memories__footnote {
@@ -630,7 +655,7 @@
   font-size: 0.62rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.66);
+  color: rgba(48, 45, 53, 0.72);
 }
 
 @media (min-width: 760px) {
@@ -2177,6 +2202,38 @@
   width: 100%;
 }
 
+.finale__seal {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  margin-bottom: 0.2rem;
+  background: radial-gradient(circle at 34% 28%, #e6a6a2, #c97574 56%, #8f4a55);
+  color: #fdf1ec;
+  box-shadow:
+    0 16px 32px -18px rgba(114, 86, 111, 0.7),
+    inset 0 2px 6px rgba(255, 255, 255, 0.42),
+    inset 0 -4px 10px rgba(114, 60, 70, 0.42);
+}
+
+.finale__seal-ring {
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  border: 1px solid rgba(253, 241, 236, 0.5);
+  pointer-events: none;
+}
+
+.finale__seal-letter {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1;
+  transform: translateY(1px);
+}
+
 .finale__title {
   font-size: clamp(2.8rem, 8.4vw, 7.4rem);
   line-height: 0.95;
@@ -2206,7 +2263,14 @@
   max-width: 52ch;
 }
 
+.finale__message .lead {
+  font-size: clamp(1.18rem, 1.9vw, 1.5rem);
+  line-height: 1.72;
+  color: var(--plum);
+}
+
 .finale__signature {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 1.2rem;
@@ -2214,13 +2278,13 @@
 }
 
 .finale__signature p {
-  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+  font-size: clamp(1.35rem, 2.6vw, 1.9rem);
   color: var(--accent-ink);
   white-space: nowrap;
 }
 
 .finale__sig-line {
-  width: clamp(20px, 6vw, 60px);
+  width: clamp(24px, 7vw, 74px);
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb), 0.7));
 }
@@ -2236,11 +2300,15 @@
   margin-top: 1rem;
 }
 
+.finale__actions .btn {
+  min-width: 13rem;
+}
+
 .finale__hint {
   font-size: 0.6rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.6);
+  color: rgba(48, 45, 53, 0.72);
 }
 
 .footer {
@@ -2262,11 +2330,11 @@
   font-size: 0.6rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.6);
+  color: rgba(48, 45, 53, 0.72);
 }
 
 .footer__brand {
-  color: rgba(48, 45, 53, 0.6);
+  color: rgba(48, 45, 53, 0.72);
 }
 
 @media (min-width: 760px) {

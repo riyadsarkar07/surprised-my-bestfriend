@@ -275,6 +275,7 @@ main {
   position: relative;
   padding-block: var(--section-y);
   padding-inline: var(--gutter);
+  scroll-margin-top: var(--nav-h);
 }
 
 .section__inner {
@@ -517,8 +518,8 @@ main {
 }
 
 .link-arrow:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent-ink);
   gap: 0.9rem;
 }
 
@@ -644,7 +645,7 @@ main {
   font-size: 0.66rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(48, 45, 53, 0.54);
+  color: rgba(48, 45, 53, 0.64);
   padding: 0.4rem 0;
   transition: color 0.35s ease;
 }

@@ -28,6 +28,18 @@ export function Finale() {
         },
       )
       gsap.fromTo(
+        '.finale__seal',
+        { scale: 0.4, opacity: 0, rotate: -18 },
+        {
+          scale: 1,
+          opacity: 1,
+          rotate: 0,
+          duration: 1.3,
+          ease: 'back.out(1.6)',
+          scrollTrigger: { trigger: root, start: 'top 74%' },
+        },
+      )
+      gsap.fromTo(
         '.finale__glow',
         { scale: 0.7, opacity: 0 },
         {
@@ -68,6 +80,11 @@ export function Finale() {
       </div>
 
       <div className="section__inner finale__inner">
+        <div className="finale__seal" aria-hidden="true">
+          <span className="finale__seal-ring" />
+          <span className="finale__seal-letter">{config.recipient.name.charAt(0)}</span>
+        </div>
+
         <p className="eyebrow eyebrow--center">{config.finale.eyebrow}</p>
 
         <h2 id="finale-title" className="finale__title display" aria-label={config.finale.title}>
